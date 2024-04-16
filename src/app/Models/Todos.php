@@ -9,5 +9,10 @@ class Todos extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content'];
+    protected $fillable = ['category_id', 'content'];
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }

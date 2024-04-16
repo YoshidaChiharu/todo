@@ -26,7 +26,7 @@
         <form action="/categories" method="post" class="write-form">
             @csrf
             <div class="write-form__input--text">
-                <input type="text" name="content">
+                <input type="text" name="name">
             </div>
             <div class="write-form__button">
                 <button class="write-form__button--submit" type="submit">作成</button>
@@ -36,32 +36,12 @@
 
     <!-- category一覧表示 -->
     <table class="category__table">
-        <tr class="category__table--row">
-            <th class="category__table--text category__table--heading">Category</th>
-        </tr>
-        <tr class="category__table--row">
-            <form action="">
-                @csrf
-                <th class="category__table--text">
-                    <input type="text" name="content" value="category1">
-                </th>
-                <th class="category__table--button">
-                    <button class="table-button button--update">更新</button>
-                </th>
-            </form>
-            <form action="">
-                @csrf
-                <th class="category__table--button">
-                    <button class="table-button button--delete">削除</button>
-                </th>
-            </form>
-        </tr>
         @foreach ( $items as $item)
         <tr class="category__table--row">
             <form action="/categories/update/{{$item->id}}" method="post">
                 @csrf
                 <th class="category__table--text">
-                    <input type="text" name="content" value="{{ $item->content }}">
+                    <input type="text" name="name" value="{{ $item->name }}">
                 </th>
                 <th class="category__table--button">
                     <button class="table-button button--update">更新</button>

@@ -30,7 +30,11 @@
                 <input type="text" name="content">
             </div>
             <div class="write-form__input--category">
-                <input type="text" name="name" placeholder="カテゴリ">
+                <select name="category_id">
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="write-form__button">
                 <button class="write-form__button--submit" type="submit">作成</button>
@@ -49,7 +53,11 @@
                 <input type="text" name="content">
             </div>
             <div class="search-form__input--category">
-                <input type="text" name="name" placeholder="カテゴリ">
+                <select name="category_id">
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="search-form__button">
                 <button class="search-form__button--submit" type="submit">作成</button>
@@ -70,7 +78,7 @@
                 <th class="todo__table--text">
                     <input type="text" name="content" value="{{ $item->content }}">
                 </th>
-                <th class="todo__table--category">Category</th>
+                <th class="todo__table--category">{{ $item->category->name }}</th>
                 <th class="todo__table--button">
                     <button class="table-button button--update">更新</button>
                 </th>

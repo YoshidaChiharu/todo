@@ -41,9 +41,9 @@
 }
 
 .write-form__input--text input,
-.write-form__input--category input,
+.write-form__input--category select,
 .search-form__input--text input,
-.search-form__input--category input {
+.search-form__input--category select {
     padding: 10px;
     width:100%;
     height:100%;
