@@ -85,11 +85,6 @@
     border-bottom: 1px solid #ddd;
 }
 
-.todo__table--heading{
-    font-size: 18px;
-    font-weight: bold;
-}
-
 .todo__table--text{
     width: 60%;
     padding: 12px;
@@ -98,9 +93,16 @@
 .todo__table--category{
     width:28%;
     padding: 12px;
+    font-weight: normal;
 }
 
-.todo__table--text input {
+.todo__table--heading {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.todo__table--text input,
+.todo__table--category input {
     width:100%;
     font-size: 18px;
     border: none;

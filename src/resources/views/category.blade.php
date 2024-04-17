@@ -38,18 +38,20 @@
     <table class="category__table">
         @foreach ( $items as $item)
         <tr class="category__table--row">
-            <form action="/categories/update/{{$item->id}}" method="post">
+            <form action="/categories/update" method="post">
                 @csrf
                 <th class="category__table--text">
                     <input type="text" name="name" value="{{ $item->name }}">
+                    <input type="hidden" name="id" value="{{ $item->id }}">
                 </th>
                 <th class="category__table--button">
                     <button class="table-button button--update">更新</button>
                 </th>
             </form>
-            <form action="/categories/delete/{{$item->id}}" method="post">
+            <form action="/categories/delete" method="post">
                 @csrf
                 <th class="category__table--button">
+                    <input type="hidden" name="id" value="{{ $item->id }}">
                     <button class="table-button button--delete">削除</button>
                 </th>
             </form>

@@ -17,11 +17,11 @@ use App\Http\Controllers\CategoryController;
 
 Route::get('/', [TodoController::class, 'index']);
 Route::post('/todos', [TodoController::class, 'store']);
-Route::post('/todos/update/{id}', [TodoController::class, 'update']);
-Route::post('/todos/delete/{id}', [TodoController::class, 'destroy']);
+Route::post('/todos/update', [TodoController::class, 'update']);
+Route::post('/todos/delete', [TodoController::class, 'destroy']);
 Route::get('/todos/search', [TodoController::class, 'search']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/categories', [CategoryController::class, 'store']);
-Route::post('/categories/update/{id}', [CategoryController::class, 'update']);
-Route::post('/categories/delete/{id}', [CategoryController::class, 'destroy']);
+Route::post('/categories/update', [CategoryController::class, 'update']);
+Route::post('/categories/delete', [CategoryController::class, 'destroy']);

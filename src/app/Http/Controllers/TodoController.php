@@ -24,20 +24,25 @@ class TodoController extends Controller
         return redirect('/')->with('status', 'Todoを作成しました');
     }
 
-    public function update(TodoRequest $request, $id)
+    public function update(TodoRequest $request)
     {
         $content = $request->only(['content']);
-        Todos::find($id)->update($content);
+        Todos::find($request->id)->update($content);
         return redirect('/');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        // dd($id);
-        Todos::find($id)->delete();
+        Todos::find($request->id)->delete();
         return redirect('/');
     }
 
-    public function search()
-    {}
+    public function search(Request $request)
+    {
+        $categories = Category::all();
+
+        $items = Todos::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->content)->get();
+
+        return view('index', ['items' => $items, 'categories' => $categories]);
+    }
 }

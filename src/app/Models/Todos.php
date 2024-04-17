@@ -15,4 +15,18 @@ class Todos extends Model
     {
         return $this->belongsTo('App\Models\Category');
     }
+
+    public function scopeCategorySearch($query, $category_id)
+    {
+        if(!empty($category_id)){
+            $query->where('category_id', $category_id);
+        }
+    }
+
+    public function scopeKeywordSearch($query, $keyword)
+    {
+        if(!empty($keyword)) {
+            $query->where('content', 'LIKE', "%{$keyword}%");
+        }
+    }
 }
