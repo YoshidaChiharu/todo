@@ -36,6 +36,8 @@ $ git clone git@github.com:YoshidaChiharu/todo.git
 2. **todoディレクトリに移動してDockerコンテナを作成**
 ```
 $ cd todo/
+```
+```
 $ docker-compose up -d --build
 ```
 3. **PHPコンテナ内にログイン**
