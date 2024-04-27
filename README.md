@@ -2,10 +2,10 @@
 
 ## 目次
 
-1. [プロジェクト概要](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%A6%82%E8%A6%81)
-2. [使用技術一覧](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93%E4%B8%80%E8%A6%A7)
-3. [環境](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E7%92%B0%E5%A2%83)
-4. [環境構築手順](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E6%89%8B%E9%A0%86)
+1. [プロジェクト概要](#プロジェクト概要)
+2. [使用技術一覧](#使用技術一覧)
+3. [環境](#環境)
+4. [環境構築手順](#環境構築手順)
 5. [動作確認](#動作確認)
 
 ## プロジェクト概要
