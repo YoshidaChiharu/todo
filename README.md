@@ -2,11 +2,11 @@
 
 ## 目次
 
-1. [プロジェクト概要](#)
-2. [使用技術一覧](#使用技術一覧)
-3. [環境](#)
-4. [環境構築手順](#)
-5. [環境変数](#)
+1. [プロジェクト概要](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%A6%82%E8%A6%81)
+2. [使用技術一覧](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93%E4%B8%80%E8%A6%A7)
+3. [環境](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E7%92%B0%E5%A2%83)
+4. [環境構築手順](https://github.com/YoshidaChiharu/todo/edit/main/README.md#%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E6%89%8B%E9%A0%86)
+5. [動作確認](#動作確認)
 
 ## プロジェクト概要
 
@@ -33,8 +33,9 @@
 ```
 $ git clone git@github.com:YoshidaChiharu/todo.git
 ```
-2. **Dockerコンテナ作成**
+2. **todoディレクトリに移動してDockerコンテナを作成**
 ```
+$ cd todo/
 $ docker-compose up -d --build
 ```
 3. **PHPコンテナ内にログイン**
@@ -49,10 +50,11 @@ $ composer install
 ```
 $ cp .env.example .env
 $ php artisan key:generate
+$ exit
 ```
 6. **（必要に応じて）パーミッションを変更**
 ```
-sudo chmod -R 777 src/
+$ sudo chmod -R 777 src/
 ```
 7. **下記環境変数を基に、`.env` ファイル内のデータベース名／ユーザー名／パスワード等を以下の通り書き換え**
 ```
@@ -67,19 +69,18 @@ DB_PASSWORD=laravel_pass  # 書き換え箇所
 
 // 後略
 ```
-8. **a**
-9. **a**
-10. **a**
+8. **テーブル作成**
+```
+$ docker-compose exec php bash
+```
+```
+$ php artisan migrate
+```
 
-## 環境変数
+## 動作確認
 
-| 変数名                 | 役割                                      | デフォルト値                       | DEV 環境での値                           |
-| ---------------------- | ----------------------------------------- | ---------------------------------- | ---------------------------------------- |
-| MYSQL_ROOT_PASSWORD    | MySQL のルートパスワード（Docker で使用） | root                               |                                          |
-| MYSQL_DATABASE         | MySQL のデータベース名（Docker で使用）   | django-db                          |                                          |
-| MYSQL_USER             | MySQL のユーザ名（Docker で使用）         | django                             |                                          |
-| MYSQL_PASSWORD         | MySQL のパスワード（Docker で使用）       | django                             |                                          |
-| MYSQL_HOST             | MySQL のホスト名（Docker で使用）         | db                                 |                                          |
-| MYSQL_PORT             | MySQL のポート番号（Docker で使用）       | 3306                               |                                          |
+以下2点が確認できれば成功
+- [http://localhost:8080/](http://localhost:8080/) でデータベースを確認し、 `laravel_db` が存在していること
+- [http://localhost/](http://localhost/) でトップページが表示されること
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
